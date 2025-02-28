@@ -22,4 +22,8 @@ const schema = new Schema({
         versionKey: false }
 )
 
+schema.post('init',function (doc){
+    if(doc.image) doc.image = process.env.BASE_URL + doc.image
+})
+
 export const Home = model('Home',schema)

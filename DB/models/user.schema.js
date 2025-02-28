@@ -15,11 +15,7 @@ password:{
     required:true,
     minLength:7
 },
-role:{
-    type:String,
-    enum:['admin','user'],
-    defult:"user"
-}
+
 },{
     timestamps:false,
     versionKey:false

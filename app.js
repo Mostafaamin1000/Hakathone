@@ -5,13 +5,14 @@ import { bootstrap } from './src/modules/Bootstrap.js';
 import { AppError } from './src/utils/appError.js'
 import { globalError } from './src/MiddleWares/globalError.js'
 import dotenv from 'dotenv'
+import { sendEmail } from './src/Email/email.js';
 dotenv.config()
 const app = express()
 const port= 3000 
 app.use(express.json())
 bootstrap(app)
 app.use('/uploads',express.static('uploads'))
-
+sendEmail()
 
 
 app.use('*', (req,res,next)=>{

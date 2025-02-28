@@ -1,7 +1,7 @@
-import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
-import { catchError } from '../../MiddleWares/CatchError.js'
+import jwt from 'jsonwebtoken'
 import { User } from '../../../DB/models/user.schema.js'
+import { catchError } from '../../MiddleWares/CatchError.js'
 import { AppError } from '../../utils/appError.js'
 
 
@@ -73,9 +73,8 @@ return next(new AppError('you are not authorized to access this endpoint..',401)
 
 
     export {
-        signin,
-        signup,
-        changeUserPassword,
-        protectedRouter,
-        allowTo
-    }
+    allowTo, changeUserPassword,
+    protectedRouter, signin,
+    signup
+}
+
